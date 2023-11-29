@@ -5,6 +5,7 @@
 "filetype off
 "set runtimepath+=~/.vim/bundle/Vundle.vim
 "call vundle#begin()
+" https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 "Plugin 'VundleVim/Vundle.vim'
 Plug 'flazz/vim-colorschemes'
