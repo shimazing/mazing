@@ -1,63 +1,44 @@
 "
 " Vundle
 "
-set nocompatible
-filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'flazz/vim-colorschemes'
-Plugin 'junegunn/vim-xmark', { 'do': 'make'}
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'simnalamburt/vim-mundo'
-Plugin 'bling/vim-airline'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'gkz/vim-ls'
-Plugin 'slim-template/vim-slim'
-Plugin 'sophacles/vim-processing'
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'roxma/nvim-yarp'
-Plugin 'ncm2/ncm2'
-Plugin 'ncm2/ncm2-bufword'
-Plugin 'ncm2/ncm2-path'
-Plugin 'HansPinckaers/ncm2-jedi'
-Plugin 'tweekmonster/impsort.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'davidhalter/jedi-vim'
+"set nocompatible
+"filetype off
+"set runtimepath+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+call plug#begin('~/.vim/plugged')
+"Plugin 'VundleVim/Vundle.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/vim-xmark', { 'do': 'make'}
+Plug 'gmarik/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'simnalamburt/vim-mundo'
+Plug 'bling/vim-airline'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'gkz/vim-ls'
+Plug 'slim-template/vim-slim'
+Plug 'sophacles/vim-processing'
+"Plug 'evanmiller/nginx-vim-syntax'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'HansPinckaers/ncm2-jedi'
+Plug 'tweekmonster/impsort.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
+Plug 'davidhalter/jedi-vim'
 " Fast python completion (use ncm2 if you want type info or snippet support)
 " Words in buffer completion
-call vundle#end()
+"call vundle#end()
+call plug#end()
 
 syntax on
 filetype plugin indent on
-
-"
-" Haskell
-"
-
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-
-let g:haskell_classic_highlighting = 1
-
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-let g:haskell_indent_guard = 2
-let g:cabal_indent_section = 2
 
 " ncm
 " enable ncm2 for all buffers
@@ -99,6 +80,7 @@ hi pythonImportedClassDef ctermfg=127
 "
 " vimrc
 "
+"autocmd BufWritePre * %s/\s\+$//
 set enc=utf-8
 set backspace=indent,eol,start
 set diffopt+=iwhite
@@ -259,4 +241,3 @@ let g:jedi#goto_command = ',m'
 " Go to definition in new tab
 nmap ,M :tab split<CR>:call jedi#goto()<CR>
 let g:jedi#usages_command = ""  " turn off
-
